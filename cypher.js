@@ -1,11 +1,28 @@
 export class Cypher{
 
     constructor(){
-        this.alphabet = 'qwertyuiopasdfghjklzxcvbnm'
-        this.capsAlphabet = 'QWERTYUIOPASDFGHJKLZXCVBNM'
+        this.alphabet = 'abcdefghijklmnopqrstuvwxyz'
+        this.capsAlphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     }
 
     ceasarCypher(text, shiftKey){
+        let cypherText = ''
+        for(let i = 0; i < text.length; i ++){
+            // Get ceasar cypher index
+            const index = this.#getCypherIndex(i, shiftKey)
+
+            //check if character is letter or not
+            if(this.#isLetter(text[i])){
+                //If is letter check if is uppercase
+                if(this.#isCapital(text[i]))
+                    cypherText += this.capsAlphabet[index]//Get letter from caps
+                else
+                    cypherText += this.alphabet[index]//get small letter
+            }
+            //Character is not letter
+            else
+                cypherText += text[i]
+        }
         return cypherText
     }
     /**
