@@ -52,3 +52,5 @@ test('Assign Property and Values: With array referencing ', () =>{
     const obj = {love: 'Life'}
     expect('Life').toBe('Life')
 })
+//Text Cypher
+
