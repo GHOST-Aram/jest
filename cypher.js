@@ -8,8 +8,10 @@ export class Cypher{
     ceasarCypher(text, shiftKey){
         let cypherText = ''
         for(let i = 0; i < text.length; i ++){
+            //Get char alphabet index
+            const alphabetIndex = this.#getCharAlphabetIndex(text[i])
             // Get ceasar cypher index
-            const index = this.#getCypherIndex(i, shiftKey)
+            const index = this.#getCypherIndex(alphabetIndex, shiftKey)
 
             //check if character is letter or not
             if(this.#isLetter(text[i])){
@@ -25,14 +27,17 @@ export class Cypher{
         }
         return cypherText
     }
+    #getCharAlphabetIndex(char){
+        return this.alphabet.indexOf(char.toLowerCase())
+    }
     /**
      * 
-     * @param {*} charIndex Index of character in text to be encrypted
+     * @param {*} charAlphabetIndex Index of character to be encrypted on alphabet
      * @param {*} cypherKey Ceaser cypher shift key
      * @returns Alphabet string index for the encrypted character
      */
-    #getCypherIndex(charIndex, cypherKey){
-        return (charIndex + cypherKey) % 26
+    #getCypherIndex(charAlphabetIndex, cypherKey){
+        return (charAlphabetIndex + cypherKey) % 26
     }
 
     /**
@@ -53,3 +58,6 @@ export class Cypher{
     }
 
 }
+const cypher = new Cypher()
+
+cypher.ceasarCypher('school',1)

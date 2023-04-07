@@ -54,7 +54,7 @@ test('Should work for mixed upper and lower case: ',()=>{
 
 test('Should work for Punctuated sentences: ',()=>{
     const word = 'What!? I really, really hope you are safe.'
-    expect(cypher.ceasarCypher(word,1)).toBe('Xibu!? J sfbmmz, sfbmmz imqf zpv bsf tbgf')
+    expect(cypher.ceasarCypher(word,1)).toBe('Xibu!? J sfbmmz, sfbmmz ipqf zpv bsf tbgf.')
 })
 
 test('Should circulate the alphabet from z back to a: ',()=>{
@@ -64,6 +64,6 @@ test('Should circulate the alphabet from z back to a: ',()=>{
 
 test('Should work for wide shift ',()=>{
     const word = 'Zebras'
-    expect(cypher.ceasarCypher(word,12)).toBe('Lqndm')
+    expect(cypher.ceasarCypher(word,12)).toBe('Lqndme')
 })
 
