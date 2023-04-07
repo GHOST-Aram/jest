@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "watch": "jest --watch"
   },
   "keywords": [],
   "author": "ghost-aram <owinoojala254@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "babel-jest": "^29.5.0",
+    "jest": "^29.5.0"
+  }
 }
