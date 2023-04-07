@@ -1,3 +1,4 @@
+import { Cypher } from './cypher.js'
 const cypher = new Cypher()
 
 test('Encrypt One word: ',()=>{

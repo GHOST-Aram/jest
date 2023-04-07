@@ -1,5 +1,4 @@
 import {sum, area, assignObject} from './sum.js'
-import { Cypher } from './cypher.js'
 
 test('Sum of Array elements', () =>{
     const numbers = [9,8,9,10,20]
